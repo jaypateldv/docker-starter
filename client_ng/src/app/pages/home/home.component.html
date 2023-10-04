@@ -1,0 +1,38 @@
+<div class="">
+  <div class="row">
+    <div class="col m-4">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Enter Number</label>
+        <input
+          [(ngModel)]="index"
+          type="number"
+          class="form-control"
+          placeholder="Enter Number"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+    <div class="col border rounded m-4 cc">
+      <div>
+        <p class="font-weight-bold card-header mb-3">Indices I have seen</p>
+        <p class="text-center">
+          <span class="text-center" *ngFor="let index of seenIndexes">
+            {{ index.number }},
+          </span>
+        </p>
+        <p class="text-center" *ngIf="!seenIndexes.length">No data available</p>
+      </div>
+      <div>
+        <p class="font-weight-bold card-header mb-3">Calculated Value :</p>
+        <p class="ml-4">
+          <span *ngFor="let value of values"
+            >For index {{ value.index }} | calculated {{ value.value }} <br />
+          </span>
+        </p>
+        <p class="text-center" *ngIf="!values.length">No data available</p>
+      </div>
+    </div>
+  </div>
+</div>
